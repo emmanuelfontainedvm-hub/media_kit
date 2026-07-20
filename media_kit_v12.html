@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Media Kit · Dr. Emmanuel Fontaine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#382547; --purple-2:#5a4470; --purple-3:#7d6494; --purple-soft:#efeaf4;
+  --coral:#FF7F50; --coral-ink:#c14a1f; --coral-soft:#fff1ea;
+  --ink:#2b2230; --muted:#7a7382; --muted-2:#9a93a3;
+  --canvas:#f6f3ef; --card:#ffffff; --line:#ece7f0; --line-2:#e2dbe9;
+  --radius:20px; --radius-sm:14px; --radius-xs:10px;
+  --shadow:0 1px 2px rgba(56,37,71,.04), 0 10px 30px rgba(56,37,71,.06);
+  --shadow-sm:0 1px 2px rgba(56,37,71,.05), 0 4px 14px rgba(56,37,71,.05);
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--canvas);font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:700;color:var(--purple)}
+.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--coral);outline-offset:2px;border-radius:4px}
+
+.shell{max-width:1240px;margin:0 auto;padding:26px 22px 60px;display:grid;gap:22px;grid-template-columns:380px 1fr;align-items:start}
+.dash{display:flex;flex-direction:column;gap:18px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.card-pad{padding:20px 22px}
+.card-title{font-size:16px;font-weight:700;color:var(--purple);letter-spacing:-.01em}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+
+.info{width:15px;height:15px;border-radius:50%;border:1.4px solid var(--muted-2);color:var(--muted);font-size:10px;font-weight:700;display:inline-grid;place-items:center;cursor:default;flex:none;font-style:normal}
+.ph{font-size:9px;font-weight:700;letter-spacing:.03em;color:var(--coral-ink);background:var(--coral-soft);padding:1px 5px;border-radius:5px;text-transform:uppercase;vertical-align:middle;white-space:nowrap}
+
+/* PROFILE */
+.profile{position:sticky;top:22px;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);overflow:hidden}
+@media(max-width:920px){ .profile{position:static} }
+.p-toolbar{display:flex;align-items:center;gap:8px;padding:12px 14px}
+.p-toolbar .site{font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.02em;margin-right:auto;padding-left:4px}
+.tbtn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:10px;background:var(--purple-soft);color:var(--purple);font-size:12px;font-weight:700;border:none;cursor:pointer;transition:background .15s}
+.tbtn:hover{background:#e4dcee}
+.tbtn svg{width:14px;height:14px}
+.tbtn.icon{width:34px;padding:0;justify-content:center}
+.p-cover{height:120px;background:radial-gradient(120% 140% at 15% 0%, #4a3160 0%, var(--purple) 55%, #2a1a3a 100%);position:relative}
+.p-cover::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 120%, rgba(255,127,80,.35), transparent 60%)}
+.p-body{padding:0 24px 26px;text-align:center;margin-top:-58px;position:relative}
+.p-avatar{width:116px;height:116px;border-radius:50%;margin:0 auto;border:5px solid var(--card);box-shadow:var(--shadow-sm);object-fit:cover;object-position:center 20%;background:var(--purple-soft)}
+.p-name{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px}
+.p-name h1{font-size:24px;letter-spacing:-.02em}
+.verified{width:22px;height:22px;flex:none}
+.p-creds{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-2);margin-top:6px}
+.p-badge{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:11px;font-weight:600;color:var(--purple-2);background:var(--purple-soft);padding:5px 11px;border-radius:999px}
+.p-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--coral)}
+.p-loc{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.5;max-width:30ch;margin-left:auto;margin-right:auto}
+.p-total{margin-top:14px;font-size:14px;color:var(--muted)}
+.p-total b{color:var(--purple);font-size:16px;font-weight:800}
+.p-sub{margin-top:6px;font-size:12px;color:var(--muted);font-weight:600}
+.p-sub b{color:var(--purple)}
+.p-channels{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.chan{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid var(--line-2);border-radius:12px;font-size:12.5px;font-weight:700;color:var(--purple);background:#fff}
+.chan b{color:var(--purple)}
+.p-topics{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.topic{font-size:12px;font-weight:600;color:var(--purple-2);background:var(--purple-soft);padding:6px 13px;border-radius:20px}
+.p-bio{font-size:13.5px;color:var(--ink);line-height:1.6;margin-top:16px}
+.p-cta{display:block;margin-top:18px;background:var(--purple);color:#fff;font-size:14px;font-weight:700;letter-spacing:.02em;padding:15px;border-radius:14px;text-align:center;transition:transform .12s,box-shadow .12s;box-shadow:0 8px 20px rgba(56,37,71,.22)}
+.p-cta:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(56,37,71,.28)}
+.p-cta2{display:block;margin-top:10px;background:#fff;color:var(--purple);border:1px solid var(--line-2);font-size:13px;font-weight:700;padding:13px;border-radius:14px;text-align:center}
+.p-cta2:hover{background:var(--canvas)}
+
+/* RATES / PARTNER */
+.rate-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+.rate-row:first-of-type{border-top:none}
+.rate-l .rt{font-size:14px;font-weight:600;color:var(--ink)}
+.rate-l .rd{font-size:12px;color:var(--muted);margin-top:2px}
+.rate-btn{display:inline-flex;align-items:center;gap:7px;background:var(--purple);color:#fff;font-size:12.5px;font-weight:700;padding:9px 14px;border-radius:10px;white-space:nowrap;transition:background .15s}
+.rate-btn:hover{background:var(--purple-2)}
+.rate-btn.ghost{background:#fff;color:var(--purple);border:1px solid var(--line-2)}
+.rate-btn.ghost:hover{background:var(--canvas)}
+
+/* CAMPAIGN OFFER */
+.offer-list{display:flex;flex-direction:column;margin:0 0 4px}
+.offer-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink);font-weight:500}
+.offer-item:first-child{border-top:none}
+.offer-item .ck{flex:none;width:19px;height:19px;border-radius:6px;background:var(--coral-soft);color:var(--coral-ink);display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:1px}
+
+/* CONTENT SAMPLES */
+.samples{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:1080px){ .samples{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:560px){ .samples{grid-template-columns:1fr} }
+.sample{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .15s,box-shadow .15s,transform .12s}
+.sample:hover{border-color:var(--coral);box-shadow:var(--shadow);transform:translateY(-2px)}
+.sample:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+.sample .s-thumb{aspect-ratio:16/9;width:100%;background:var(--purple-soft);position:relative;overflow:hidden;flex:none}
+.sample .s-thumb img{width:100%;height:100%;object-fit:cover}
+/* typographic tile for sources whose thumbnail cannot be stored locally */
+.sample .s-fallback{width:100%;height:100%;display:flex;align-items:flex-end;padding:13px 14px;background:radial-gradient(120% 140% at 15% 0%, #4a3160 0%, var(--purple) 60%, #2a1a3a 100%)}
+.sample .s-fallback span{font-size:11.5px;font-weight:600;color:#d9cfe6;line-height:1.45}
+.sample .s-body{padding:13px 15px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.sample .s-fmt{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--coral-ink);background:var(--coral-soft);padding:3px 7px;border-radius:5px;align-self:flex-start}
+.sample .s-title{font-size:13px;font-weight:700;color:var(--purple);line-height:1.4;letter-spacing:-.01em;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.sample .s-link{margin-top:auto;padding-top:4px;font-size:11.5px;font-weight:700;color:var(--purple-2);transition:color .15s}
+.sample:hover .s-link{color:var(--coral-ink)}
+
+/* BRANDS */
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brand{flex:1;min-width:120px;height:64px;border:1px solid var(--line);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;padding:12px 14px;background:#fff}
+.brand img{max-height:34px;width:auto;object-fit:contain}
+.brand-note,.note{font-size:10.5px;color:var(--muted-2);margin-top:12px;line-height:1.5}
+
+/* TILES */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 16px;box-shadow:var(--shadow-sm)}
+.tile-head{display:flex;align-items:center;justify-content:space-between}
+.tile-ic{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:var(--muted)}
+.tile-ic svg{width:15px;height:15px;color:var(--purple-2)}
+.tile-val{font-size:26px;font-weight:800;color:var(--purple);letter-spacing:-.03em;margin-top:12px;line-height:1}
+.tile-val .u{font-size:13px;font-weight:700;color:var(--coral)}
+.tile-sub{font-size:11px;color:var(--muted);margin-top:5px}
+
+/* ===== AUDIENCE ===== */
+.toggle{display:inline-flex;background:var(--purple-soft);border-radius:11px;padding:3px}
+.toggle button{border:none;background:none;font:inherit;font-size:12.5px;font-weight:700;color:var(--purple-2);padding:8px 15px;border-radius:9px;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+.toggle button svg{width:14px;height:14px}
+.toggle button[aria-pressed="true"]{background:#fff;color:var(--purple);box-shadow:var(--shadow-sm)}
+
+.selwrap{position:relative;display:inline-flex;align-items:center}
+.selwrap svg{position:absolute;right:11px;pointer-events:none;width:14px;height:14px;color:var(--purple)}
+select.country{appearance:none;-webkit-appearance:none;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--purple);background:var(--purple-soft);border:1px solid var(--line-2);border-radius:10px;padding:9px 34px 9px 13px;cursor:pointer;outline:none;max-width:220px}
+select.country:focus-visible{border-color:var(--coral)}
+
+.geo-readout{background:var(--purple);border-radius:var(--radius-sm);padding:18px 20px;color:#fff;margin:4px 0 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.geo-readout .flag{font-size:38px;line-height:1}
+.geo-readout .big{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.geo-readout .lbl{font-size:11.5px;color:#d9cfe6;text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+.geo-readout .subline{font-size:11px;color:#c4b6d4;margin-top:7px;max-width:38ch;line-height:1.45}
+.geo-readout .col{flex:1;min-width:150px}
+.geo-meta{display:flex;flex-wrap:wrap;gap:8px}
+.geo-meta .gm{font-size:11.5px;font-weight:600;color:var(--purple);background:#fff;padding:7px 11px;border-radius:8px}
+.geo-meta .gm b{color:var(--coral-ink)}
+
+/* channel mix */
+.mixbar{display:flex;height:18px;border-radius:9px;overflow:hidden;border:1px solid var(--line);background:var(--canvas)}
+.mixseg{height:100%;transition:width .5s ease}
+.mixlegend{display:flex;flex-wrap:wrap;gap:9px 16px;margin-top:13px}
+.mixlegend .ml{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink);white-space:nowrap}
+.mixlegend .mk{width:11px;height:11px;border-radius:3px;flex:none}
+.mixlegend .mv{font-weight:700;color:var(--purple)}
+.mixlegend .est-dot{font-size:8.5px;color:var(--coral-ink);font-weight:700;text-transform:lowercase;white-space:nowrap;background:var(--coral-soft);padding:1px 5px;border-radius:4px}
+
+/* subcards / demographics */
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+@media(max-width:560px){ .aud-grid{grid-template-columns:1fr} }
+.subcard{background:var(--canvas);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 16px}
+.subcard .sh{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--purple);margin-bottom:14px}
+.subcard .sh svg{width:15px;height:15px}
+.subcard .sh .tag{font-size:10px;font-weight:600;color:var(--muted-2);text-transform:none;letter-spacing:0}
+
+.donut-wrap{display:flex;align-items:center;gap:18px}
+.donut{width:118px;height:118px;border-radius:50%;flex:none;position:relative;background:conic-gradient(var(--coral) 0 var(--male,23%), var(--purple) var(--male,23%) 100%)}
+.donut::after{content:"";position:absolute;inset:22px;border-radius:50%;background:var(--canvas)}
+.legend{display:flex;flex-direction:column;gap:10px}
+.legend .lg{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink)}
+.legend .lg .k{width:11px;height:11px;border-radius:3px;flex:none}
+.legend .lg .v{margin-left:auto;font-weight:700;color:var(--purple)}
+.legend .lg .name{min-width:56px}
+
+.hbars{display:flex;flex-direction:column;gap:9px}
+.hbar{display:grid;grid-template-columns:52px 1fr 40px;align-items:center;gap:11px}
+.hbar .hb-l{font-size:12px;color:var(--ink);font-weight:600}
+.hbar .hb-t{height:11px;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.hbar .hb-f{height:100%;background:var(--purple);border-radius:6px;width:0;transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.hbar .hb-v{font-size:12px;font-weight:700;color:var(--purple);text-align:right}
+
+/* professional composition + mini-stats */
+.pro{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:4px}
+.pro .p{background:var(--canvas);border:1px solid var(--line);border-radius:12px;padding:14px 13px}
+.pro .pn{font-size:21px;font-weight:800;color:var(--purple);line-height:1}
+.pro .pn b{color:var(--coral)}
+.pro .pl{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.4}
+.pro3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:560px){.pro,.pro3{grid-template-columns:1fr 1fr}}
+
+/* country rows */
+.crow{display:grid;grid-template-columns:22px 1fr 66px;align-items:center;gap:10px 10px;padding:8px 10px;border-radius:10px;transition:background .15s;cursor:pointer}
+.crow:hover{background:var(--purple-soft)}
+.crow .cf{font-size:16px}
+.crow .cn{font-size:13px;font-weight:600;color:var(--ink)}
+.crow .cv{font-size:12.5px;font-weight:700;color:var(--purple);text-align:right}
+.crow .cbar{grid-column:2 / 4;height:8px;background:var(--purple-soft);border-radius:5px;overflow:hidden;margin-top:2px}
+.crow .cbar i{display:block;height:100%;background:var(--purple-3);border-radius:5px;transition:width .5s ease}
+.crow.active{background:var(--coral-soft)}
+.crow.active .cn{color:var(--coral-ink)}
+.crow.active .cbar i{background:var(--coral)}
+.crow.rest{opacity:.72}
+.crow.rest .cf{filter:grayscale(1)}
+
+/* proof of performance (renders only when a case is published) */
+.cases{display:flex;flex-direction:column;gap:14px}
+.case{border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 18px;background:#fff}
+.case h3{font-size:15px}
+.case .kick{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-ink);margin-bottom:6px}
+.case .cmeta{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+.case .res{display:flex;gap:22px;margin-top:13px;border-top:1px solid var(--line);padding-top:13px}
+.case .res .rv{font-size:20px;font-weight:800;color:var(--purple);line-height:1}
+.case .res .rl{font-size:10.5px;color:var(--muted);margin-top:4px}
+.case .disc{font-size:10px;color:var(--muted-2);margin-top:11px;font-style:italic;line-height:1.5}
+
+/* proof-of-performance: featured case + metric strip */
+.case.feature{border-color:var(--purple-3);box-shadow:0 1px 2px rgba(56,37,71,.05),0 8px 24px rgba(56,37,71,.09)}
+.case.feature .kick{color:#fff;background:var(--purple);display:inline-block;padding:4px 9px;border-radius:6px}
+.case .blurb{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:9px}
+.case .res{flex-wrap:wrap;gap:14px 26px}
+.case.feature .res .rv{font-size:23px}
+
+/* progressive disclosure */
+.dd-note{font-size:11.5px;color:var(--muted);margin:-4px 0 14px;line-height:1.5}
+.dd{border-top:1px solid var(--line)}
+.dd:first-of-type{border-top:none}
+.dd>summary{cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:12px;padding:15px 0}
+.dd>summary::-webkit-details-marker{display:none}
+.dd .dd-txt{flex:1;min-width:0}
+.dd .dd-t{display:block;font-size:14px;font-weight:700;color:var(--purple);letter-spacing:-.01em}
+.dd .dd-s{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.45}
+.dd .dd-x{flex:none;width:26px;height:26px;border-radius:8px;background:var(--purple-soft);color:var(--purple);display:grid;place-items:center;font-size:15px;font-weight:800;line-height:1;transition:transform .18s,background .15s;margin-top:1px}
+.dd>summary:hover .dd-x{background:#e4dcee}
+.dd[open]>summary .dd-x{transform:rotate(45deg);background:var(--coral-soft);color:var(--coral-ink)}
+.dd[open]>summary .dd-t{color:var(--coral-ink)}
+.dd-body{padding:0 0 20px 38px}
+@media(max-width:520px){ .dd-body{padding-left:0} }
+.dd-body p{font-size:13px;color:var(--ink);line-height:1.65;margin:0 0 11px}
+.dd-body p:last-child{margin-bottom:0}
+.dd-pull{font-size:15px;font-weight:700;color:var(--purple);letter-spacing:-.01em;border-left:3px solid var(--coral);padding:2px 0 2px 13px;margin:15px 0}
+.dd-points{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:15px 0}
+@media(max-width:640px){ .dd-points{grid-template-columns:1fr} }
+.dd-points .dp{background:var(--canvas);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+.dd-points .dp .dt{font-size:12.5px;font-weight:700;color:var(--purple);margin-bottom:5px}
+.dd-points .dp .dd2{font-size:11.5px;color:var(--muted);line-height:1.55}
+.dd-num{display:flex;flex-direction:column;gap:11px;margin:15px 0}
+.dd-num .dn{display:flex;gap:12px;align-items:flex-start}
+.dd-num .dn .ix{flex:none;width:24px;height:24px;border-radius:7px;background:var(--purple);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.dd-num .dn .dt{font-size:12.5px;font-weight:700;color:var(--purple)}
+.dd-num .dn .dd2{font-size:11.5px;color:var(--muted);line-height:1.55;margin-top:3px}
+
+/* methodology disclosure */
+.methods summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--purple);list-style:none;display:flex;align-items:center;gap:8px}
+.methods summary::-webkit-details-marker{display:none}
+.methods summary .exp{margin-left:auto;color:var(--purple-2);font-weight:800;font-size:16px}
+.methods[open] summary .exp{transform:rotate(45deg)}
+.methods ul{margin:14px 0 0;padding-left:18px}
+.methods li{font-size:11.5px;color:var(--muted);line-height:1.6;margin-bottom:7px}
+
+.foot{max-width:1240px;margin:0 auto;padding:0 22px 40px;text-align:center;color:var(--muted-2);font-size:11.5px}
+.foot b{color:var(--purple)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--purple);color:#fff;font-size:13px;font-weight:600;padding:11px 18px;border-radius:10px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:all .25s;z-index:100}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:920px){ .shell{grid-template-columns:1fr;max-width:620px} }
+@media(max-width:520px){ .shell{padding:16px 14px 48px} .tiles{grid-template-columns:1fr 1fr} .donut-wrap{flex-direction:column;align-items:flex-start} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="profile" id="profile"></aside>
+  <main class="dash" id="dash"></main>
+</div>
+<div class="foot" id="foot"></div>
+<div class="toast" id="toast" role="status" aria-live="polite">Link copied</div>
+
+<script>
+/* ============================================================================
+   ⚙️  DATA: single source of truth. Edit values here only.
+   ----------------------------------------------------------------------------
+   DATA-TYPE LEGEND (see per-field comments):
+     ACTUAL      : a real 12-month (or point-in-time) platform figure.
+     ANNUALIZED  : a real short-window figure scaled to a 12-month basis
+                   (Facebook 196d, Instagram 90d). Marked annualized:true and
+                   shown with a coral "annualized" tag in the legend.
+     MODELED     : inferred (e.g. LinkedIn country split from its top metros).
+     PLACEHOLDER : needs verified input from you; written as [ADD ...] and never
+                   shown as a live claim (see `performance`, hidden until published).
+   To refresh monthly: update meta.updated + the values below. Displayed
+   headline figures are rounded for honesty; exact numbers stay here for maths.
+   ========================================================================== */
+const DATA = {
+  meta:{
+    name:"Dr. Emmanuel Fontaine",
+    credentials:"DVM · MSc · PhD · Dipl. ECAR",
+    // Location/language line, deliberately NOT flags (flags read as top markets).
+    location:"Global audience · Content in English, French, Spanish and Portuguese",
+    website:"dremmanuelfontaine.com",
+    websiteUrl:"https://dremmanuelfontaine.com",
+    email:"emmanuel@dremmanuelfontaine.com",
+    updated:"June 2026",                 // drives the top freshness badge + footer
+    avatar:"headshot.jpg",
+    topics:["Dog & Cat Reproduction","Neonatology","Pediatrics","Breeding"],
+    bio:"Veterinarian specialized in canine &amp; feline reproduction, neonatology, and pediatrics. I turn peer-reviewed science into practical education for dog &amp; cat breeders and the vets who guide them, in four languages.",
+    // Whole cross-platform following (NOT all professional; FB/IG include breeders etc.)
+    totalLabel:"Cross-platform audience",
+    totalValue:"28K+",                   // rounded headline (exact channel total ≈ 27,978)
+    proLine:"15K+ professionals on LinkedIn",   // the professional slice, kept distinct
+    countriesReached:"200+",             // all-time countries & territories with blog readership (actual)
+    newsletterOpenRate:"~29%",
+    // TODO: Add the verified newsletter open-rate reporting period (e.g. "last 6 months"). Leave "" until confirmed.
+    newsletterOpenRatePeriod:""
+  },
+
+  // Profile channel pills (rounded, point-in-time follower counts, actual).
+  channels:[
+    {label:"LinkedIn", value:"15K"},
+    {label:"Facebook", value:"6.1K"},
+    {label:"YouTube",  value:"2.7K"},
+    {label:"Instagram",value:"1.7K"},
+    {label:"Newsletter",value:"2.4K"}
+  ],
+
+  partner:{
+    title:"Ways to partner",
+    rows:[
+      {t:"Sponsored educational content", d:"Article · newsletter · video · social", cta:"Request a proposal", ghost:false},
+      {t:"Expert-led webinar or talk", d:"Live or evergreen, single or multilingual", cta:"Ask me", ghost:true},
+      {t:"Multi-month education program", d:"Cross-channel series or resource hub", cta:"Let's talk", ghost:true}
+    ],
+    note:"Budgets scoped by format, depth, languages, usage rights and duration. Education-first: claims stay within the evidence."
+  },
+
+  // What a buyer can actually purchase (no fixed prices by design).
+  campaign:{
+    title:"What a sponsored education campaign can include",
+    items:[
+      "Expert-led cornerstone article or video",
+      "Newsletter integration",
+      "Social-media adaptations",
+      "Market-specific or multilingual versions",
+      "Campaign performance summary"
+    ],
+    note:"Each partnership is built around a defined educational objective, audience, market and set of deliverables. Content can be created as a single activation or as a coordinated multi-channel campaign."
+  },
+
+  /* ---- SELECTED CONTENT EXAMPLES ----------------------------------------
+     Imported from education-partnerships.dremmanuelfontaine.com. Every item
+     is a real, published piece; titles are the destinations' own titles.
+     `image` is a locally stored thumbnail; items without a retrievable
+     thumbnail (paywalled / login-walled) use `kicker` to render a
+     typographic tile instead. Never add an item without a live URL.
+     ---------------------------------------------------------------------- */
+  samples:{
+    title:"Selected content examples",
+    note:"A selection of breeder- and veterinary-facing education across articles, videos, webinars, infographics and multilingual resources.",
+    items:[
+      {
+        title:"The Importance of Newborn Temperature Monitoring in the Canine and Feline Neonatal Patient",
+        format:"Video · Neonatal care",
+        image:"samples/s_video_neonatal_temperature.jpg",
+        alt:"Title card for the video lecture on newborn temperature monitoring in puppies and kittens",
+        url:"https://youtu.be/DFLUNp2J6GA"
+      },
+      {
+        title:"How to Resuscitate Newborn Puppies and Kittens",
+        format:"Blog article · Neonatal resuscitation",
+        image:"samples/s_blog_resuscitation.jpg",
+        alt:"Header image for the article on resuscitating newborn puppies and kittens",
+        url:"https://dremmanuelfontaine.com/2026/02/16/how-to-resuscitate-newborn-puppies-and-kittens/"
+      },
+      {
+        title:"Feline Neonatal Care",
+        format:"Peer-reviewed article · Feline neonatology",
+        kicker:"Veterinary Clinics of North America: Small Animal Practice",
+        url:"https://www.sciencedirect.com/science/article/abs/pii/S0195561625000701?via%3Dihub"
+      },
+      {
+        title:"Social Media Content",
+        format:"Social media · Breeder community",
+        kicker:"Educational posts for veterinary and breeder audiences",
+        url:"https://www.facebook.com/emmanuel.fontaine.758/posts/pfbid023JJPqgdQBFwTg4EZwkdWNuVjUMFS5MyL2rPCfe3D1Dbf7wCLTgm4yZUFcKacfkaYl"
+      }
+    ]
+  },
+
+  brands:{
+    title:"Organizations I have worked with",
+    logos:[
+      {src:"logos/l_royalcanin.png", alt:"Royal Canin logo", h:26},
+      {src:"logos/l_purina.png",     alt:"Purina logo",     h:20},
+      {src:"logos/l_hills.png",      alt:"Hill's logo",     h:40},
+      {src:"logos/l_zestypaws.png",  alt:"Zesty Paws logo", h:28},
+      {src:"logos/l_dvm360.png",     alt:"DVM360 logo",     h:34},
+      {src:"logos/l_vetgirl.png",    alt:"VetGirl logo",    h:26}
+    ],
+    note:"Selected organizations from employment, speaking, education, media and content collaborations. Inclusion does not imply endorsement or a current commercial partnership."
+  },
+
+  tiles:[
+    {icon:"blog",    label:"Blog visitors",       value:"134,809",       sub:"Last 12 months · actual"},
+    {icon:"eye",     label:"All-time blog views", value:"490K", unit:"+", sub:"Since 2016 · actual"},
+    {icon:"audience",label:"LinkedIn professionals",value:"15,113",      sub:"Followers · 55% veterinary services"},
+    // newsletter sub is built at render from meta.newsletterOpenRate (+ optional verified period)
+    {icon:"mail",    label:"Newsletter",          value:"2,376",         dyn:"newsletter"},
+    {icon:"article", label:"Articles published",  value:"565",           sub:"EN · FR · ES · PT"},
+    {icon:"globe",   label:"Countries & territories", value:"200", unit:"+", sub:"All-time readership"}
+  ],
+
+  // Proof of performance: renders ONLY cases with published:true.
+  // Do NOT invent numbers. Fill a case, set published:true, and it appears.
+  // `metrics` is an array so a case can carry 2–5 verified figures.
+  // `feature:true` gives the case the highlighted treatment.
+  performance:{
+    title:"Proof of educational engagement",
+    note:"A specialized scientific topic can become credible education that a qualified breeder audience shows up for. Figures come from platform analytics or partner-provided reporting; where a partner owned the funnel, that is stated.",
+    cases:[
+      {
+        published:true,
+        feature:true,
+        kicker:"Featured · Expert-led scientific webinar",
+        title:"Gut health, the microbiome, and lifelong wellbeing in dogs and cats",
+        topic:"Major canine registry webinar, sponsored by a pet-health brand",
+        format:"Live registry-hosted webinar · May 2026",
+        market:"Dog & cat breeder audience",
+        blurb:"Sole veterinary presenter for a live, registry-hosted educational webinar, translating current peer-reviewed science into practical guidance for a dog- and cat-breeder audience.",
+        metrics:[
+          {label:"Registrants",           value:"770"},
+          {label:"Live attendees",        value:"114"},
+          {label:"Avg. time in session",  value:"51 min"},
+          {label:"Audience questions",    value:"254"},
+          {label:"Rated 4–5 / 5",         value:"92%"}
+        ],
+        disclaimer:"Source: third-party webinar-platform and partner-provided reporting. 73% gave the top score. A qualified audience registered, stayed for the science, and asked hundreds of questions."
+      },
+      {
+        published:true,
+        kicker:"Bilingual webinar amplification",
+        title:"Two cat-breeder webinars, English and French",
+        topic:"Global pet-nutrition company",
+        format:"Invited veterinary expert · promotion through my own channels",
+        market:"Cat breeders · EN + FR",
+        blurb:"Invited veterinary expert for two cat-breeder webinars. Promotion ran through my own channels to build sign-up intent.",
+        metrics:[
+          {label:"Comment-based sign-up requests", value:"468"},
+          {label:"Combined promotional views",     value:"15,814"},
+          {label:"Unique viewers",                 value:"7,605"}
+        ],
+        disclaimer:"Figures reflect my promotional reach and sign-up intent only. Registration, attendance, replay and sales data were managed by the partner and were not shared."
+      }
+    ],
+    closer:"A specialized scientific topic can become a credible education asset that reaches a qualified breeder and veterinary audience, holds their attention, generates real questions, and supports informed understanding of your product or category, across my channels and on yours."
+  },
+
+  audience:{
+    // ---- demographics: Facebook + Instagram followers, weighted by follower count (ACTUAL) ----
+    //  FB 6,126 @ 80/20 women, IG 1,672 @ 67.9/32.1 → blended ≈ 77/23; age blended likewise.
+    gender:{ male:23, female:77 },
+    age:[
+      {label:"18–24", v:2.0},
+      {label:"25–34", v:14.6},
+      {label:"35–44", v:24.1},
+      {label:"45–54", v:24.9},
+      {label:"55–64", v:20.7},
+      {label:"65+",   v:13.6}
+    ],
+    // {pct} is computed at render from the age data (sum of 35–44 and older).
+    ageNote:"{pct}% of the Facebook and Instagram audience is aged 35 or older.",
+
+    // LinkedIn professional composition (ACTUAL, LinkedIn follower demographics).
+    pro:[
+      {n:"55", u:"%", l:"Industry: veterinary services"},
+      {n:"41", u:"%", l:"Seniority: senior-level"},
+      {n:"17", u:"%", l:"Job title: veterinarian"},
+      {n:"12", u:"%", l:"At firms of 10,001+"}
+    ],
+
+    // Community & discovery signals (ACTUAL, per-platform; windows noted in labels).
+    engagement:{
+      title:"Engagement & discovery",
+      stats:[
+        {n:"20,090", u:"",  l:"Facebook engagements (6 mo), 57% are comments"},
+        {n:"62",     u:"%", l:"of Instagram views come from non-followers"},
+        {n:"15,465", u:"",  l:"professionals reached on LinkedIn (12 mo)"}
+      ]
+    },
+
+    // ---- channel mix per mode ----
+    //  value = exact 12-month figure used for all maths.
+    //  basis: 'actual' (true 12-mo) or 'annualized' (scaled from a shorter window).
+    //  annualized:true → coral "annualized" tag. `note` = hover tooltip.
+    channels:{
+      reach:[
+        {id:"blog",     label:"Blog",      value:134809, color:"#382547", basis:"actual",     note:"12-month actual: website visitors"},
+        {id:"linkedin", label:"LinkedIn",  value:78778,  color:"#5a4470", basis:"actual",     note:"12-month actual: post impressions"},
+        {id:"instagram",label:"Instagram", value:255000, color:"#FF7F50", basis:"annualized", annualized:true, note:"Annualized from 90 days of platform data"},
+        {id:"youtube",  label:"YouTube",   value:8507,   color:"#c14a1f", basis:"actual",     note:"12-month actual: views (285,221 lifetime)"},
+        {id:"facebook", label:"Facebook",  value:451000, color:"#8a76a0", basis:"annualized", annualized:true, note:"Annualized from 196 days of platform data"}
+      ],
+      followers:[
+        {id:"linkedin",  label:"LinkedIn",   value:15113, color:"#5a4470", basis:"actual", note:"Followers (actual)"},
+        {id:"facebook",  label:"Facebook",   value:6126,  color:"#8a76a0", basis:"actual", note:"Followers (actual)"},
+        {id:"youtube",   label:"YouTube",    value:2691,  color:"#c14a1f", basis:"actual", note:"Subscribers (actual)"},
+        {id:"newsletter",label:"Newsletter", value:2376,  color:"#b59ec9", basis:"actual", note:"Subscribers (actual)"},
+        {id:"instagram", label:"Instagram",  value:1672,  color:"#FF7F50", basis:"actual", note:"Followers (actual)"}
+      ]
+    },
+    modeMeta:{
+      reach:{ label:"Annual content visibility", sub:"Views, impressions and visitors across all channels · not deduplicated" },
+      followers:{ label:"Committed audience", sub:"Followers &amp; subscribers across owned + social channels" }
+    },
+    // Discreet qualifier shown under a SELECTED COUNTRY's headline (never the global one).
+    countrySub:{
+      reach:"Estimated market visibility based on available platform geography",
+      followers:"Estimated geographic distribution"
+    },
+
+    // ---- countries: combined per-platform geography, summed across all 5 channels ----
+    // reach/followers hold EXACT numbers (for maths); the UI rounds them for display.
+    // Real geography: blog (top6), Facebook, Instagram, YouTube. LinkedIn country
+    // split is MODELED from its top metros (Paris, NYC, Montreal/Toronto, São Paulo…).
+    // Country totals reconcile exactly to the channel totals (validated at runtime).
+    countries:[
+      {id:"us", flag:"🇺🇸", name:"United States",  lang:"English",          channel:"Facebook",  reach:325355, followers:9793 },
+      {id:"ca", flag:"🇨🇦", name:"Canada",         lang:"English / French", channel:"Facebook",  reach:230371, followers:4627 },
+      {id:"fr", flag:"🇫🇷", name:"France",         lang:"French",           channel:"Facebook",  reach:65051,  followers:3477 },
+      {id:"br", flag:"🇧🇷", name:"Brazil",         lang:"Portuguese",       channel:"Instagram", reach:44065,  followers:948 },
+      {id:"uk", flag:"🇬🇧", name:"United Kingdom",  lang:"English",          channel:"Facebook",  reach:32243,  followers:1317 },
+      {id:"au", flag:"🇦🇺", name:"Australia",      lang:"English",          channel:"Facebook",  reach:31686,  followers:875 },
+      {id:"mx", flag:"🇲🇽", name:"Mexico",         lang:"Spanish",          channel:"Facebook",  reach:28786,  followers:598 }
+    ],
+    // aggregate tail: smaller markets platforms don't itemize (incl. Germany, Spain, etc.)
+    others:{ id:"others", flag:"🌍", name:"Rest of world", lang:"EN · FR · ES · PT", channel:"Blog + social", reach:170537, followers:6343 },
+
+    // Short, scannable note shown on the card. Full detail lives in `methodology`.
+    note:"Platform metrics are reported according to each platform’s available definitions. Visibility combines views, impressions and visitors and is not deduplicated. Facebook and Instagram figures are annualized from shorter reporting periods. LinkedIn country distribution is modeled from reported metro data."
+  },
+
+  /* ---- PROGRESSIVE DISCLOSURE -------------------------------------------
+     The positioning narrative from the PDF media kit, kept behind click-to-
+     reveal rows so the dashboard stays scannable. Each row: a title + a
+     one-line teaser that earns the click, then the full argument.
+     `pull` renders as an emphasized standalone line. `points` renders as a
+     3-across grid of short principles.
+     ---------------------------------------------------------------------- */
+  deepDive:{
+    title:"The thinking behind the numbers",
+    note:"Four short reads for anyone scoping a collaboration. Expand what's relevant.",
+    sections:[
+      {
+        id:"who",
+        title:"Who I am, and who this audience is",
+        teaser:"Why this is not a broad pet-owner audience",
+        body:[
+          "I'm a veterinarian specialized in canine and feline reproduction, neonatology and pediatrics, and a Diplomate of the European College of Animal Reproduction. I have taught veterinary and breeder audiences in more than 35 countries. My work serves two connected groups: dog and cat breeders, and the veterinary professionals who support them.",
+          "This audience does not come for entertainment. It comes to understand why something works, and what to do with that understanding, around breeding, reproductive care, birth, neonatal health and early development."
+        ],
+        pull:"Not volume. Quality.",
+        after:[
+          "It is a specialized community that includes people who manage breeding programs, make decisions about reproductive and neonatal care, and select veterinary, nutritional, diagnostic, hygiene and breeding-related solutions.",
+          "Within clinics, breeding programs and professional networks, members of this audience often influence which products and practices get adopted. That influence, grounded in a specific field, is what makes access to it valuable to a pet-health company."
+        ]
+      },
+      {
+        id:"brands",
+        title:"How I work with brands",
+        teaser:"Independent by default: recommendations are earned",
+        body:[
+          "I won't read a script or post a testimonial on command. But I do tell this audience what I trust and why, when the evidence supports it. A brand can't buy my endorsement, but a good product can earn an honest one.",
+          "Independence is not a barrier to the work. It is what makes the association durable."
+        ],
+        points:[
+          {t:"I protect the science", d:"Messaging stays within what the evidence can support. I will flag claims that go further than the data."},
+          {t:"I explain the reasoning", d:"The audience adopts what it understands. I teach the mechanism, not just the conclusion."},
+          {t:"I adapt the complexity", d:"Technical research becomes clear, usable education for breeders and practitioners alike."}
+        ],
+        after:[
+          "A working bridge between veterinary science, dog and cat breeders, veterinary professionals, and the pet-health companies that serve them."
+        ]
+      },
+      {
+        id:"library",
+        title:"Why an evergreen multilingual library matters",
+        teaser:"What a placement keeps doing after launch week",
+        body:[
+          "Published continuously since 2016 in English, French, Spanish and Portuguese. 200+ countries and territories have read the blog over its lifetime; the United States is the largest single audience with 202,000+ all-time views, ahead of Canada, France, the United Kingdom and Brazil."
+        ],
+        points:[
+          {t:"It keeps surfacing", d:"Educational articles stay searchable and keep reaching relevant readers over time."},
+          {t:"It crosses markets", d:"Multilingual publishing can extend a single initiative across several markets at once."},
+          {t:"It compounds", d:"The depth of the library builds context and authority around a specific topic."}
+        ],
+        after:[
+          "That makes it suitable for broader awareness and education programs, not just a single placement."
+        ]
+      },
+      {
+        id:"objectives",
+        title:"The four partnership objectives, in detail",
+        teaser:"Start from the objective, then choose the format",
+        body:[
+          "Engagements are organized around a company objective, then matched to the right format. Every collaboration is education-first."
+        ],
+        numbered:[
+          {t:"Educate a specialized market", d:"Help breeders or veterinary professionals understand a scientific topic, mechanism or management practice. Formats: article, newsletter, infographic, video, webinar."},
+          {t:"Support a product or category launch", d:"Introduce a product, diagnostic, nutritional solution or clinical concept through education rather than promotion. Formats: campaign, scientific explainer, launch webinar, social content, multilingual support."},
+          {t:"Build long-term scientific credibility", d:"Maintain an ongoing educational presence, not a single placement. Formats: multi-month partnership, article and newsletter series, cross-channel program, resource hub."},
+          {t:"Translate science into communication", d:"Turn technical research into clear, usable material for breeder- or veterinary-facing audiences, across four languages, plus presentations and training."}
+        ],
+        after:[
+          "Budgets are scoped according to format, scientific depth, usage rights, languages, production needs, promotion requirements and duration. Product-specific messaging must be scientifically supportable."
+        ]
+      }
+    ]
+  },
+
+  // Full methodology: collapsed disclosure near the bottom.
+  methodology:{
+    title:"Methodology & data sources",
+    details:[
+      "Blog: 134,809 visitors, last 12 months (Google Analytics). Actual.",
+      "LinkedIn: 78,778 post impressions and 15,465 members reached over 12 months; 15,113 followers. Actual.",
+      "YouTube: 8,507 views over 12 months (285,221 lifetime); 2,691 subscribers. Actual.",
+      "Facebook: 242,210 views over 196 days, annualized to a 12-month basis; 6,126 followers. Annualized / actual.",
+      "Instagram: 62,777 views over 90 days, annualized to a 12-month basis; 1,672 followers. Annualized / actual.",
+      "Country map: sums each platform’s reported geography. LinkedIn reports locations by metro, not country, so its country split is modeled from its top metros (Paris, New York, Montreal, Toronto, São Paulo). Country totals reconcile to channel totals; smaller unlisted markets sit in “Rest of world”.",
+      "Demographics: age & gender are Facebook + Instagram followers, weighted by follower count. Professional composition is LinkedIn follower demographics.",
+      "“Visibility” blends views, impressions and visitors across channels and is not deduplicated; it is not a count of unique people reached."
+    ]
+  }
+};
+
+const ICON = {
+  share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',
+  globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>',
+  chevron:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>',
+  gender:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg>',
+  cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>',
+  audience:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 20v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>',
+  blog:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h11l3 3v13.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 19.5z"/><path d="M8 8h6M8 12h8M8 16h5"/></svg>',
+  eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>',
+  article:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+  reach:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8M2.8 2.8a13 13 0 0 0 0 18.4M21.2 2.8a13 13 0 0 1 0 18.4"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-6.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>',
+  verified:'<svg class="verified" viewBox="0 0 24 24" fill="none" role="img" aria-label="Verified"><path d="M12 2l2.4 1.8 3-.2 1 2.8 2.4 1.7-.9 2.9.9 2.9-2.4 1.7-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8L3.2 16l.9-2.9-.9-2.9 2.4-1.7 1-2.8 3 .2z" fill="#382547"/><path d="M8.5 12.2l2.3 2.3 4.7-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+};
+
+(function(){
+  const $=(s,el=document)=>el.querySelector(s);
+  const A=DATA.audience;
+  let MODE="reach";                          // 'reach' | 'followers'
+  let SEL="global";                          // selected country id
+
+  const mail=()=>`mailto:${DATA.meta.email}?subject=${encodeURIComponent("Partnership enquiry: media kit")}`;
+  const fmt=n=>n.toLocaleString("en-US");
+  // rounded compact number for lists / country headlines (e.g. 325355 → "325K")
+  const kfmt=n=> n>=1000000 ? (n/1000000).toFixed(n>=10000000?0:1)+"M"
+                : n>=1000 ? Math.round(n/1000)+"K" : String(n);
+  // conservative rounded headline for large blended totals (e.g. 928094 → "900K+")
+  function roundedGlobal(val){
+    if(val>=1000000) return (Math.floor(val/100000)/10).toFixed(1).replace(/\.0$/,'')+"M+";
+    if(val>=100000)  return Math.floor(val/100000)*100+"K+";
+    if(val>=10000)   return Math.round(val/1000)+"K+";
+    return kfmt(val);
+  }
+  function esc(s){return String(s).replace(/[<>]/g,c=>({"<":"&lt;",">":"&gt;"}[c]));}
+
+  const allCountries=()=>A.countries.concat([A.others]);
+  const modeTotal=m=> allCountries().reduce((s,c)=>s+c[m],0);
+  const channelTotalOf=m=> A.channels[m].reduce((s,x)=>s+x.value,0);
+
+  /* ---------- PROFILE ---------- */
+  function profile(){
+    const m=DATA.meta;
+    const chans=DATA.channels.map(c=>`<span class="chan">${esc(c.label)} <b>${esc(c.value)}</b></span>`).join("");
+    const topics=m.topics.map(t=>`<span class="topic">${esc(t)}</span>`).join("");
+    $("#profile").innerHTML=`
+      <div class="p-toolbar">
+        <span class="site">${esc(m.website)}</span>
+        <button class="tbtn" id="shareBtn" aria-label="Copy link to this media kit">${ICON.share}Share</button>
+        <a class="tbtn icon" href="${esc(m.websiteUrl)}" target="_blank" rel="noopener" aria-label="Open website in a new tab">${ICON.link}</a>
+      </div>
+      <div class="p-cover" aria-hidden="true"></div>
+      <div class="p-body">
+        <img class="p-avatar" src="${esc(m.avatar)}" alt="Portrait of ${esc(m.name)}">
+        <div class="p-name"><h1>${esc(m.name)}</h1>${ICON.verified}</div>
+        <div class="p-creds">${esc(m.credentials)}</div>
+        <div class="p-badge"><span class="dot" aria-hidden="true"></span>Data through ${esc(m.updated)}</div>
+        <div class="p-loc">${esc(m.location)}</div>
+        <div class="p-total">${esc(m.totalLabel)}: <b>${esc(m.totalValue)}</b></div>
+        <div class="p-sub">${esc(m.proLine)}</div>
+        <div class="p-channels">${chans}</div>
+        <div class="p-topics">${topics}</div>
+        <p class="p-bio">${m.bio}</p>
+        <a class="p-cta" href="${mail()}">Discuss a partnership</a>
+        <a class="p-cta2" href="${esc(m.websiteUrl)}" target="_blank" rel="noopener">Visit the website →</a>
+      </div>`;
+  }
+
+  /* ---------- STATIC DASH CARDS ---------- */
+  function partnerCard(){
+    const p=DATA.partner;
+    const rows=p.rows.map(r=>`
+      <div class="rate-row">
+        <div class="rate-l"><div class="rt">${esc(r.t)}</div><div class="rd">${esc(r.d)}</div></div>
+        <a class="rate-btn ${r.ghost?'ghost':''}" href="${mail()}">${esc(r.cta)} →</a>
+      </div>`).join("");
+    return `<section class="card card-pad"><div class="card-head"><h2 class="card-title">${esc(p.title)}</h2></div>${rows}<p class="note">${esc(p.note)}</p></section>`;
+  }
+  function campaignCard(){
+    const c=DATA.campaign;
+    const items=c.items.map(i=>`<div class="offer-item"><span class="ck" aria-hidden="true">✓</span><span>${esc(i)}</span></div>`).join("");
+    return `<section class="card card-pad"><div class="card-head"><h2 class="card-title">${esc(c.title)}</h2></div><div class="offer-list">${items}</div><p class="note">${esc(c.note)}</p></section>`;
+  }
+  // Selected content examples: one card per real, published piece.
+  function contentSamplesCard(){
+    const S=DATA.samples;
+    const cards=S.items.map(s=>{
+      const thumb = s.image
+        ? `<img src="${esc(s.image)}" alt="${esc(s.alt||s.title)}" loading="lazy" decoding="async">`
+        : `<span class="s-fallback"><span>${esc(s.kicker||s.format||'')}</span></span>`;
+      return `
+      <a class="sample" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="s-thumb">${thumb}</span>
+        <span class="s-body">
+          <span class="s-fmt">${esc(s.format)}</span>
+          <span class="s-title" title="${esc(s.title)}">${esc(s.title)}</span>
+          <span class="s-link">View example →</span>
+        </span>
+      </a>`;
+    }).join("");
+    return `<section class="card card-pad"><div class="card-head"><h2 class="card-title">${esc(S.title)}</h2></div><p class="note" style="margin-top:0;margin-bottom:14px">${esc(S.note)}</p><div class="samples">${cards}</div></section>`;
+  }
+  function brandCard(){
+    const b=DATA.brands;
+    const logos=b.logos.map(l=>`<div class="brand"><img src="${esc(l.src)}" alt="${esc(l.alt)}" style="max-height:${l.h}px"></div>`).join("");
+    return `<section class="card card-pad"><div class="card-head"><h2 class="card-title">${esc(b.title)}</h2></div><div class="brands">${logos}</div><p class="brand-note">${esc(b.note)}</p></section>`;
+  }
+  function tilesCard(){
+    const m=DATA.meta;
+    // Newsletter sub built from data; the reporting period only shows once verified.
+    const nlSub=`${m.newsletterOpenRate} average open rate${m.newsletterOpenRatePeriod?` · ${m.newsletterOpenRatePeriod}`:''} · 4 languages`;
+    const t=DATA.tiles.map(x=>{
+      const sub = x.dyn==="newsletter" ? nlSub : (x.sub||'');
+      return `
+      <div class="tile">
+        <div class="tile-head"><span class="tile-ic">${ICON[x.icon]||''}${esc(x.label)}</span><span class="info" title="${esc(sub)}" aria-hidden="true">i</span></div>
+        <div class="tile-val">${esc(x.value)}${x.unit?`<span class="u">${esc(x.unit)}</span>`:''}</div>
+        <div class="tile-sub">${esc(sub)}</div>
+      </div>`;
+    }).join("");
+    return `<div class="tiles">${t}</div>`;
+  }
+  // Proof of performance: only renders published cases (hidden otherwise).
+  function performanceCard(){
+    const P=DATA.performance;
+    const pub=(P.cases||[]).filter(c=>c.published);
+    if(!pub.length) return "";
+    const cards=pub.map(c=>{
+      // metrics[] is the current shape; primary/secondary kept for older entries.
+      const mets=c.metrics||[c.primary,c.secondary].filter(Boolean);
+      const res=mets.map(m=>`<div><div class="rv">${esc(m.value)}</div><div class="rl">${esc(m.label)}</div></div>`).join("");
+      return `
+      <div class="case${c.feature?' feature':''}">
+        <div class="kick">${esc(c.kicker||c.topic||"")}</div>
+        <h3>${esc(c.title)}</h3>
+        <div class="cmeta">${esc(c.topic||"")}${c.format?` · ${esc(c.format)}`:""}${c.market?` · ${esc(c.market)}`:""}</div>
+        ${c.blurb?`<p class="blurb">${esc(c.blurb)}</p>`:""}
+        ${res?`<div class="res">${res}</div>`:""}
+        ${c.disclaimer?`<div class="disc">${esc(c.disclaimer)}</div>`:""}
+      </div>`;
+    }).join("");
+    return `<section class="card card-pad"><div class="card-head"><h2 class="card-title">${esc(P.title)}</h2></div><p class="note" style="margin-top:0;margin-bottom:14px">${esc(P.note)}</p><div class="cases">${cards}</div>${P.closer?`<p class="note" style="margin-top:14px">${esc(P.closer)}</p>`:""}</section>`;
+  }
+
+  // Progressive disclosure: the positioning narrative, hidden until clicked.
+  function deepDiveCard(){
+    const D=DATA.deepDive;
+    const para=a=>(a||[]).map(t=>`<p>${esc(t)}</p>`).join("");
+    const rows=D.sections.map(s=>{
+      const points=s.points?`<div class="dd-points">${s.points.map(p=>`<div class="dp"><div class="dt">${esc(p.t)}</div><div class="dd2">${esc(p.d)}</div></div>`).join("")}</div>`:"";
+      const nums=s.numbered?`<div class="dd-num">${s.numbered.map((p,i)=>`<div class="dn"><span class="ix" aria-hidden="true">${i+1}</span><div><div class="dt">${esc(p.t)}</div><div class="dd2">${esc(p.d)}</div></div></div>`).join("")}</div>`:"";
+      const pull=s.pull?`<div class="dd-pull">${esc(s.pull)}</div>`:"";
+      return `<details class="dd" id="dd-${esc(s.id)}">
+        <summary>
+          <span class="dd-x" aria-hidden="true">＋</span>
+          <span class="dd-txt"><span class="dd-t">${esc(s.title)}</span><span class="dd-s">${esc(s.teaser)}</span></span>
+        </summary>
+        <div class="dd-body">${para(s.body)}${pull}${points}${nums}${para(s.after)}</div>
+      </details>`;
+    }).join("");
+    return `<section class="card card-pad"><div class="card-head"><h2 class="card-title">${esc(D.title)}</h2></div><p class="dd-note">${esc(D.note)}</p>${rows}</section>`;
+  }
+  function methodologyCard(){
+    const M=DATA.methodology;
+    const li=M.details.map(d=>`<li>${esc(d)}</li>`).join("");
+    return `<section class="card card-pad"><details class="methods"><summary>${esc(M.title)}<span class="exp" aria-hidden="true">＋</span></summary><ul>${li}</ul></details></section>`;
+  }
+
+  /* ---------- AUDIENCE (interactive) ---------- */
+  function audienceShell(){
+    const opts=`<option value="global">🌍 Global</option>`+
+      allCountries().map(c=>`<option value="${c.id}">${c.flag} ${esc(c.name)}</option>`).join("");
+    const ageBars=A.age.map(g=>{
+      const max=Math.max(...A.age.map(x=>x.v));
+      return `<div class="hbar"><span class="hb-l">${esc(g.label)}</span><span class="hb-t"><span class="hb-f" data-w="${Math.round(g.v/max*100)}"></span></span><span class="hb-v">${g.v}%</span></div>`;
+    }).join("");
+    // age caption computed from the data (sum of 35–44 and older) so it stays accurate on update
+    const age35=Math.round(A.age.filter(a=>parseInt(a.label,10)>=35).reduce((s,a)=>s+a.v,0));
+    const pro=A.pro.map(p=>`<div class="p"><div class="pn">${p.n}<b>${p.u}</b></div><div class="pl">${esc(p.l)}</div></div>`).join("");
+    const engStats=A.engagement.stats.map(s=>`<div class="p"><div class="pn">${esc(s.n)}<b>${esc(s.u||'')}</b></div><div class="pl">${esc(s.l)}</div></div>`).join("");
+
+    // Gender + age demographics (moved BELOW the LinkedIn professional/employer/engagement blocks).
+    const demoGrid=`
+      <div class="aud-grid" style="margin-top:16px">
+        <div class="subcard">
+          <div class="sh">${ICON.gender}Gender <span class="tag">· FB + Instagram</span></div>
+          <div class="donut-wrap">
+            <div class="donut" style="--male:${A.gender.male}%" role="img" aria-label="Gender split: ${A.gender.female}% female, ${A.gender.male}% male"></div>
+            <div class="legend">
+              <div class="lg"><span class="k" style="background:var(--purple)" aria-hidden="true"></span><span class="name">Female</span><span class="v">${A.gender.female}%</span></div>
+              <div class="lg"><span class="k" style="background:var(--coral)" aria-hidden="true"></span><span class="name">Male</span><span class="v">${A.gender.male}%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="subcard">
+          <div class="sh">${ICON.cal}Age <span class="tag">· FB + Instagram</span></div>
+          <div class="hbars">${ageBars}</div>
+          <p class="note" style="margin-top:11px">${esc(A.ageNote.replace('{pct}', age35))}</p>
+        </div>
+      </div>`;
+
+    return `<section class="card card-pad">
+      <div class="card-head">
+        <h2 class="card-title">Audience &amp; visibility</h2>
+        <span class="selwrap"><select class="country" id="countrySel" aria-label="Select a market">${opts}</select>${ICON.chevron}</span>
+      </div>
+
+      <div class="toggle" role="group" aria-label="Metric type" style="margin-bottom:14px">
+        <button id="mReach" aria-pressed="true" aria-label="Show content visibility">${ICON.reach}Visibility</button>
+        <button id="mFollow" aria-pressed="false" aria-label="Show committed followers">${ICON.heart}Followers</button>
+      </div>
+
+      <div class="geo-readout" id="geoReadout" aria-live="polite"></div>
+
+      <div class="subcard" style="margin-bottom:16px">
+        <div class="sh">${ICON.globe}<span id="mixTitle">Where the visibility comes from</span> <span class="tag" id="mixSub"></span></div>
+        <div class="mixbar" id="mixBar"></div>
+        <div class="mixlegend" id="mixLegend"></div>
+      </div>
+
+      <div class="subcard" style="margin-top:16px">
+        <div class="sh">${ICON.audience}Professional layer <span class="tag">· LinkedIn</span></div>
+        <div class="pro">${pro}</div>
+      </div>
+
+      <div class="subcard" style="margin-top:16px">
+        <div class="sh">${ICON.reach}${esc(A.engagement.title)}</div>
+        <div class="pro pro3">${engStats}</div>
+      </div>
+
+      ${demoGrid}
+
+      <div class="subcard" style="margin-top:16px">
+        <div class="sh">${ICON.globe}<span id="ctyTitle">Top markets by visibility</span></div>
+        <div id="countryRows"></div>
+      </div>
+
+      <p class="note" id="audNote">${A.note}</p>
+    </section>`;
+  }
+
+  function renderMix(){
+    const list=[...A.channels[MODE]].sort((a,b)=>b.value-a.value);  // biggest segment first
+    const total=list.reduce((s,c)=>s+c.value,0);
+    $("#mixTitle").textContent = MODE==="reach" ? "Where the visibility comes from" : "Where the audience follows";
+    $("#mixSub").innerHTML = "· "+A.modeMeta[MODE].sub;
+    $("#mixBar").innerHTML = list.map(c=>`<span class="mixseg" title="${esc(c.label)}: ${esc(c.note||'')}" style="width:${(c.value/total*100).toFixed(2)}%;background:${c.color}"></span>`).join("");
+    $("#mixLegend").innerHTML = list.map(c=>`<span class="ml" title="${esc(c.note||'')}"><span class="mk" style="background:${c.color}" aria-hidden="true"></span>${esc(c.label)} <span class="mv">${kfmt(c.value)}</span>${c.annualized?' <span class="est-dot">annualized</span>':''}</span>`).join("");
+  }
+
+  function renderGeo(){
+    const isGlobal = SEL==="global";
+    const mm=A.modeMeta[MODE];
+    let c;
+    if(isGlobal){
+      c={flag:"🌍", name:"Global", lang:"EN · FR · ES · PT", channel:"Blog + social", val:channelTotalOf(MODE)};
+    } else {
+      const src=allCountries().find(x=>x.id===SEL)||A.countries[0];
+      c={flag:src.flag, name:src.name, lang:src.lang, channel:src.channel, val:src[MODE]};
+    }
+    const countrySum = modeTotal(MODE);            // shares are relative to the country map
+    const share = countrySum? Math.round(c.val/countrySum*100) : 0;
+    const lbl = isGlobal ? `${mm.label} · all markets` : `${mm.label} · ${esc(c.name)}`;
+    // Global keeps the blended-metric explanation; a selected country gets a discreet "estimated" qualifier.
+    const subline = isGlobal ? mm.sub : A.countrySub[MODE];
+    const meta = isGlobal
+      ? `<span class="gm">${A.countries.length} key markets shown</span><span class="gm">${esc(DATA.meta.countriesReached)} countries and territories reached</span>`
+      : `<span class="gm">Share <b>${share}%</b></span><span class="gm">Language <b>${esc(c.lang)}</b></span><span class="gm">Top channel <b>${esc(c.channel)}</b></span>`;
+    $("#geoReadout").innerHTML=`
+      <span class="flag" aria-hidden="true">${c.flag}</span>
+      <div class="col">
+        <div class="big">${isGlobal ? roundedGlobal(c.val) : kfmt(c.val)}</div>
+        <div class="lbl">${lbl}</div>
+        <div class="subline">${subline}</div>
+      </div>
+      <div class="col"><div class="geo-meta">${meta}</div></div>`;
+  }
+
+  function renderCountries(){
+    $("#ctyTitle").textContent = MODE==="reach" ? "Top markets by visibility" : "Top markets by followers";
+    const sorted=[...A.countries].sort((a,b)=>b[MODE]-a[MODE]);
+    const top=sorted.slice(0,10);
+    const max=top[0][MODE];
+    const rowHtml=(c,rest)=>`
+      <div class="crow ${rest?'rest':''} ${SEL===c.id?'active':''}" data-c="${c.id}" role="button" tabindex="0" aria-label="${esc(c.name)}: ${kfmt(c[MODE])}">
+        <span class="cf" aria-hidden="true">${c.flag}</span>
+        <span class="cn">${esc(c.name)}</span>
+        <span class="cv">${kfmt(c[MODE])}</span>
+        <span class="cbar"><i style="width:${Math.round(c[MODE]/max*100)}%"></i></span>
+      </div>`;
+    $("#countryRows").innerHTML = top.map(c=>rowHtml(c,false)).join("") + rowHtml(A.others,true);
+    document.querySelectorAll("#countryRows .crow").forEach(r=>{
+      const go=()=>setCountry(r.dataset.c);
+      r.addEventListener("click",go);
+      r.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } });
+    });
+  }
+
+  // keep both ?market= and ?mode= in the URL so deep links preserve the full state
+  function syncUrl(){
+    const url=new URL(location.href);
+    if(SEL==="global") url.searchParams.delete("market"); else url.searchParams.set("market",SEL);
+    if(MODE==="followers") url.searchParams.set("mode","followers"); else url.searchParams.delete("mode");
+    history.replaceState(null,"",url);
+  }
+  function setMode(m){
+    MODE=m;
+    $("#mReach").setAttribute("aria-pressed", String(m==="reach"));
+    $("#mFollow").setAttribute("aria-pressed", String(m==="followers"));
+    renderGeo(); renderMix(); renderCountries(); syncUrl();
+  }
+  function setCountry(id){
+    SEL=id;
+    if($("#countrySel").value!==id) $("#countrySel").value=id;
+    renderGeo(); renderCountries(); syncUrl();
+  }
+
+  function footer(){
+    const m=DATA.meta;
+    $("#foot").innerHTML=`<b>${esc(m.name)}</b> · ${esc(m.credentials)} · ${esc(m.website)} · <a href="${mail()}" style="color:var(--coral-ink);font-weight:600">${esc(m.email)}</a><br><span style="opacity:.85">Partnership media kit · Data through ${esc(m.updated)}</span>`;
+  }
+
+  /* ---------- RUNTIME RECONCILIATION CHECK (dev console only; never shown to visitors) ---------- */
+  function validate(){
+    const warn=(a,b,label)=>{ if(Math.abs(a-b)>0){ console.warn(`[media-kit] reconciliation mismatch: ${label}: ${a.toLocaleString()} vs ${b.toLocaleString()} (Δ ${a-b})`); } };
+    const rCh=channelTotalOf("reach"),      rCty=modeTotal("reach");
+    const fCh=channelTotalOf("followers"),  fCty=modeTotal("followers");
+    warn(rCh, rCty, "reach: channel total vs country total");
+    warn(fCh, fCty, "followers: channel total vs country total");
+    // cross-platform displayed figure (rounded) should be within 1K of the exact channel total
+    const shown=parseFloat(String(DATA.meta.totalValue).replace(/[^\d.]/g,""))*1000;
+    if(Math.abs(shown-fCh)>1000) console.warn(`[media-kit] profile cross-platform total ${DATA.meta.totalValue} deviates from ${fCh.toLocaleString()}`);
+    console.info(`[media-kit] totals OK: visibility ${rCh.toLocaleString()}, followers ${fCh.toLocaleString()}`);
+  }
+
+  /* ---------- MOUNT ---------- */
+  profile();
+  $("#dash").innerHTML = partnerCard()+campaignCard()+contentSamplesCard()+brandCard()+tilesCard()+performanceCard()+audienceShell()+deepDiveCard()+methodologyCard();
+  footer();
+
+  // initial state + deep link (?market=fr&mode=followers)
+  const params=new URLSearchParams(location.search);
+  const startMarket=(params.get("market")||"global").toLowerCase();
+  const validMarket = startMarket==="global" || allCountries().some(c=>c.id===startMarket);
+  SEL = validMarket?startMarket:"global";
+  MODE = params.get("mode")==="followers" ? "followers" : "reach";
+  $("#countrySel").value=SEL;
+  setMode(MODE); setCountry(SEL);
+
+  $("#countrySel").addEventListener("change",()=>setCountry($("#countrySel").value));
+  $("#mReach").addEventListener("click",()=>setMode("reach"));
+  $("#mFollow").addEventListener("click",()=>setMode("followers"));
+
+  $("#shareBtn").addEventListener("click",async()=>{
+    try{ await navigator.clipboard.writeText(location.href); toast("Link copied"); }
+    catch{ toast("Copy this page's URL"); }
+  });
+  function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800);}
+
+  requestAnimationFrame(()=>document.querySelectorAll(".hb-f").forEach(f=>f.style.width=(f.dataset.w||0)+"%"));
+  validate();
+})();
+</script>
+</body>
+</html>
